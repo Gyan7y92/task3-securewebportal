@@ -1,6 +1,6 @@
 provider "aws" {
   region     = "ap-south-1"
-  profile    = "rakesh"
+  profile    = "mahesh"
 }
 
 //---------------------------------------------------
@@ -122,7 +122,7 @@ resource "aws_security_group" "mywpsg" {
 resource "aws_instance" "wpos" {
   ami           = "ami-7e257211"
   instance_type = "t2.micro"
-  key_name      = "kanikakey1"
+  key_name      = "gyankey1"
   subnet_id =  aws_subnet.publicSn.id
   vpc_security_group_ids = [ aws_security_group.mywpsg.id ]
   tags = {
@@ -153,7 +153,7 @@ resource "aws_security_group" "mysqlsg1" {
 resource "aws_instance" "mysqlos" {
   ami           = "ami-08706cb5f68222d09"
   instance_type = "t2.micro"
-  key_name      = "kanikakey1"
+  key_name      = "gyankey1"
   subnet_id =  aws_subnet.privateSn.id
   vpc_security_group_ids = [ aws_security_group.mysqlsg1.id ]
   tags = {
